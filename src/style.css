@@ -48,7 +48,7 @@
 
   /* Layout */
   --max-width: 1200px;
-  --header-height: 84px;
+  --header-height: 104px;
   --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -189,7 +189,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .logo-img {
-  height: 52px;
+  height: 78px;
+  max-height: 78px;
   width: auto;
   object-fit: contain;
 }
@@ -679,7 +680,12 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 768px) {
   :root {
-    --header-height: 72px;
+    --header-height: 84px;
+  }
+
+  .logo-img {
+    height: 60px;
+    max-height: 60px;
   }
 
   .mobile-toggle {
