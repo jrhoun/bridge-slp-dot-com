@@ -12,6 +12,7 @@ export default defineConfig({
         faq: resolve(__dirname, 'faq.html'),
         resources: resolve(__dirname, 'resources.html'),
         contact: resolve(__dirname, 'contact-us.html'),
+        thankyou: resolve(__dirname, 'thank-you.html'),
       },
     },
   },

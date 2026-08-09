@@ -101,11 +101,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const data = await response.json();
 
         if (data.success) {
-          showToast('Thank you! Your message has been sent. We will contact you soon.');
+          showToast('Thank you! Redirecting...');
           contactForm.reset();
+          setTimeout(() => {
+            window.location.href = '/thank-you.html';
+          }, 800);
         } else {
           // Fallback if key not configured or fails
-          showToast('Thank you! Redirecting to mail app...', false);
+          showToast('Thank you! Opening your mail app...', false);
           setTimeout(() => {
             const email = formData.get('email') || '';
             const name = formData.get('name') || '';
@@ -114,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
           }, 1500);
         }
       } catch (err) {
-        showToast('Thank you! Opening your email app to complete your request...');
+        showToast('Thank you! Opening your mail app...');
         const name = formData.get('name') || '';
         const message = formData.get('message') || '';
         setTimeout(() => {
