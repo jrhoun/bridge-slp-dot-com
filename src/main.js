@@ -1,4 +1,8 @@
-// Bridge Speech Therapy - Interactive Functionality
+// Bridge Speech Therapy - Interactive Functionality & Analytics
+import { inject } from '@vercel/analytics';
+
+// Initialize Vercel Analytics tracking
+inject();
 
 document.addEventListener('DOMContentLoaded', () => {
   // Mobile Nav Toggle
