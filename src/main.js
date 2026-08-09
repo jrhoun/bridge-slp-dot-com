@@ -36,6 +36,28 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // Contact Page Tabs (Calendly vs Form)
+  const tabBtnCalendly = document.getElementById('tab-btn-calendly');
+  const tabBtnForm = document.getElementById('tab-btn-form');
+  const tabContentCalendly = document.getElementById('tab-content-calendly');
+  const tabContentForm = document.getElementById('tab-content-form');
+
+  if (tabBtnCalendly && tabBtnForm && tabContentCalendly && tabContentForm) {
+    tabBtnCalendly.addEventListener('click', () => {
+      tabBtnCalendly.className = 'btn btn-primary';
+      tabBtnForm.className = 'btn btn-outline';
+      tabContentCalendly.style.display = 'block';
+      tabContentForm.style.display = 'none';
+    });
+
+    tabBtnForm.addEventListener('click', () => {
+      tabBtnForm.className = 'btn btn-primary';
+      tabBtnCalendly.className = 'btn btn-outline';
+      tabContentForm.style.display = 'block';
+      tabContentCalendly.style.display = 'none';
+    });
+  }
+
   // Contact Form AJAX Handler
   const contactForm = document.getElementById('contact-form');
   const toast = document.getElementById('toast');
