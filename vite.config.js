@@ -13,6 +13,7 @@ export default defineConfig({
         resources: resolve(__dirname, 'resources.html'),
         contact: resolve(__dirname, 'contact-us.html'),
         thankyou: resolve(__dirname, 'thank-you.html'),
+        privacy: resolve(__dirname, 'privacy.html'),
       },
     },
   },
