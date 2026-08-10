@@ -4,6 +4,25 @@ import { inject } from '@vercel/analytics';
 // Initialize Vercel Analytics tracking
 inject();
 
+// Google Analytics 4 (GA4) Helper
+function initGA() {
+  const gaId = import.meta.env.VITE_GA_MEASUREMENT_ID || 'G-MEASUREMENT_ID_PLACEHOLDER';
+  if (!gaId || gaId === 'G-MEASUREMENT_ID_PLACEHOLDER') return;
+
+  const script = document.createElement('script');
+  script.async = true;
+  script.src = `https://www.googletagmanager.com/gtag/js?id=${gaId}`;
+  document.head.appendChild(script);
+
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { window.dataLayer.push(arguments); }
+  window.gtag = gtag;
+  gtag('js', new Date());
+  gtag('config', gaId);
+}
+
+initGA();
+
 document.addEventListener('DOMContentLoaded', () => {
   // Mobile Nav Toggle
   const mobileToggle = document.querySelector('.mobile-toggle');
